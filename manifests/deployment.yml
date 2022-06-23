@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "demodfakscluster-16ff"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "demodfakscluster-16ff"
+  template:
+    metadata:
+      labels:
+        app: "demodfakscluster-16ff"
+    spec:
+      containers:
+        - name: "demodfakscluster-16ff"
+          image: "azuredfcontainerreg.azurecr.io/demodfakscluster"
+          ports:
+          - containerPort: 80
